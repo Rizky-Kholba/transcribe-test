@@ -9,7 +9,11 @@ def download_video(url, save_path):
     try:
         yt = YouTube(url)
         stream = yt.streams.filter(progressive=True, file_extension="mp4").first()
+<<<<<<< HEAD
         stream.download(output_path="downloads/", filename="video.mp4")
+=======
+        stream.download(output_path="/downloads", filename="video.mp4")
+>>>>>>> d7fad5687d41c895ffdc9933652420654a280e60
         st.success("Video berhasil diunduh!")
     except Exception as e:
         st.error(f"Error: {e}")
@@ -17,7 +21,11 @@ def download_video(url, save_path):
 
 def transcribe_audio():
     model = whisper.load_model("base")
+<<<<<<< HEAD
     result = model.transcribe("dowloads/video.mp4", language="id")
+=======
+    result = model.transcribe("/download/video.mp4", language="id")
+>>>>>>> d7fad5687d41c895ffdc9933652420654a280e60
 
     print(result["text"])
     return result
