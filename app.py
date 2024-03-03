@@ -9,7 +9,7 @@ def download_video(url, save_path):
     try:
         yt = YouTube(url)
         stream = yt.streams.filter(progressive=True, file_extension="mp4").first()
-        stream.download(output_path=, filename="video.mp4")
+        stream.download(output_path, filename="video.mp4")
         st.success("Video berhasil diunduh!")
     except Exception as e:
         st.error(f"Error: {e}")
