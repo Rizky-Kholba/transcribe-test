@@ -17,7 +17,7 @@ def download_video(url, save_path):
 
 def transcribe_audio():
     model = whisper.load_model("base")
-    result = model.transcribe("dowloads/video.mp4", language="id")
+    result = model.transcribe("downloads/video.mp4", language="id")
 
     print(result["text"])
     return result
